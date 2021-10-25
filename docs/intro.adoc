@@ -1,0 +1,48 @@
+
+[.lightbg,background-video="videos/relaxing.mp4",background-video-loop="true",background-video-muted="true",background-opacity="0.8"]
+== Agenda
+
+* Expect no surprise here
+* topics: Studying, Testing, Coding, Rules
+* The general question is: *less or more*?
+
+[.notes]
+--
+* Explain terminology. (to) Code is to program or write programs. Noun: the program.
+
+--
+
+[.lightbg,background-video="videos/relaxing.mp4",background-video-loop="true",background-video-muted="true",background-opacity="1.0"]
+=== Warning
+
+.You may find some things equivalent to
+[source,java]
+----
+  door.open();
+----
+
+[.notes]
+--
+Let us start with a quiz.
+--
+
+[.lightbg,background-image="images/panko-or-porridge.png",background-opacity="0.7"]
+=== Quiz
+
+[big blue]*Panko* or [big blue]*Porridge*
+
+I like to cook, and like to talk in metaphores, so:
+
+* Assume the doctor prescribes: +
+ [blue]*high carb intake in short time*.
+* Would you choose [blue]#Panko# or [blue]#Porridge#?, +
+  considering you have to prepare it yourselves.
+* Remember the answer, you will be [blue]#quized# at the end.
+
+[.notes]
+--
+* Time to think, ease down. Consider:
+* Panko takes mixing, kneading, rising,  baking, baking again, grinding giving you a floury substance.
+* Porridge: add oats to water, cook for 5 minutes.
+* When eating raw Panko, I am [red]#sure# you'll need some water to get it down.
+--

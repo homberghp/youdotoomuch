@@ -1,0 +1,89 @@
+[.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
+== Test More
+
+* Testing is not a [red]*cost* but an [green]*investment*.
+* By working TDD style you typically write [green]#less# code.
+* Writing tests can help [green]#reveal inconsistencies# in requirements.
+* You [green]#reduce risk# in the future.
+* Having [red]#to few# tests produces a serious [red]#technical debt#.
+
+[.notes]
+--
+* Studies have shown that, after some decrease at the beginning, +
+  testing actually increases programmers productivity.
+* In coding, _less is more_.
+* Automated tests and regressions.
+--
+
+[.decentlightbg,background-video="videos/fog-hands.mp4",background-video-loop="true",background-opacity="0.6"]
+=== No Tests, No Progress
+
+* You can't measure progress [green]#unless# you test.
+* A test ensures that a feature is realized.
+
+[.notes]
+--
+Although tests can't prove the absence of errors,
+they can help measure the degree of done.
+--
+
+[.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
+=== Tests give confidence
+
+* Including confidence to change or experiment.
+
+[.notes]
+--
+* a set of passing functional tests are a great way to enable experiments
+  to improve non functional aspects such as efficiency, readability.
+--
+
+[.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
+=== Testing Documents
+
+* A well written test is the easiest way to document how an API +
+ is to be used, including [red]*pre*- and post-conditions.
+
+[.notes]
+--
+* Tests are an excellent way to document the use of an API.
+--
+
+[.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
+[.degrade,transition="convex-in"]
+=== Example
+
+[source,java]
+----
+  String greet= greeter.greet( "Klaas" );
+  assertThat(greet) // passes
+      .isNotNull()
+      .isNotEmpty()
+      .contains( "Hello", "Klaas" );
+----
+
+[.notes]
+--
+* The test is trivial to write and exposes the function of the API.
+* Example uses more asserts than needed, but is about readability.
+--
+
+[.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
+[.degrade,transition="concave-in"]
+=== Example
+
+[source,java]
+----
+  ThrowingCallable code = () -> {
+          greeter.greet(null));  // illegal use
+  };
+
+  // because it throws an NPE
+  assertThrownBy( code )
+     .isInstanceOf( NullPointerException.class );
+----
+
+[.notes]
+--
+* This test documents the precondition.
+--

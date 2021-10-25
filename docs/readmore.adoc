@@ -1,0 +1,84 @@
+[.lightbg,background-video="videos/woman-study.mp4",background-video-loop="true",background-opacity="0.7"]
+== Read more code
+
+[.notes]
+--
+* As in eat more fruits.
+* Reading more prepares you for future problems, gives ideas.
+* You will see the solution and do not have to search for it.
+* a method/class/package a day keeps the architect away.
+--
+
+[.lightbg,background-video="videos/woman-study.mp4",background-video-loop="true",background-opacity="0.7"]
+=== The importance of reading code.
+
+[quote, Martin Fowler, Refactoring]
+Any fool can write code that a computer understands. +
+Good programmers write code that humans can understand.
+
+[.notes]
+--
+* A program is a story by one human to another with the side-effect that a computer can execute it.
+* Visit code exhibits (good example open source).
+* Mind the naming problem. Good type (class) and method names are a boon to readability.
+--
+
+[.lightbg,background-video="videos/woman-study.mp4",background-video-loop="true",background-opacity="0.7"]
+=== Collect good examples
+
+[.notes]
+--
+* even home brew, if the can withstand some scrutiny.
+* Make reading (good) code part of the homework.
+--
+
+[.lightbg,background-video="videos/woman-study.mp4",background-video-loop="true",background-opacity="0.7"]
+=== Study good examples
+
+* Give students code to read, for instance as a context.
+* Fill in the blanks exercises help here.
+
+
+[.notes]
+--
+* Reading a lot makes a better writer, also for code.
+* Adding review exercises, e.g. comparing solutions for e.g. readability, testability,
+  can help.
+* The parts around the blanks need to be understood, and when that is beautiful code,
+  the student gets the exposure you want.
+--
+
+[.lightbg,background-video="videos/woman-study.mp4",background-video-loop="true",background-opacity="0.7"]
+[transition="fade-out"]
+=== Not just writing code
+
+* Coding is not only writing statements.
+* It is studying how elements can be combined: reading.
+* Write your own API doc.
+* And don't forget: API doc is *what* it does, not how.
+* API doc can and should be brief.
+
+[.notes]
+--
+* Reading API doc, is also about homework.
+* Good code is understandable code, by virtue of the names used and the easy to understand constructs.
+* add reviewing code as a skill.
+--
+
+[.lightbg,background-video="videos/woman-study.mp4",background-video-loop="true",background-opacity="0.7"]
+[transition="fade-in"]
+=== It's about Quality
+
+* A green test is not the only quality; +
+ [blue]#Readability# is more important.
+* Code duplication by copy and waste makes a [red]#boring# read.
+* Review often, because functional testing is blind for writing style.
+* Readable code is correct most of the time.
+
+[.notes]
+--
+* Another reason to avoid *code duplication or copy and waste*: all that copied code has to be read too, which is
+  both boring and a waste of reading time.
+* And since it is a boring read, copy and waste landfills are an excellent place for bugs to hide.
+* Review code, in particular or readability, not just on functional correctness.
+--

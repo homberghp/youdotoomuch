@@ -1,0 +1,114 @@
+[.lightbg,background-video="videos/blue-sky.mp4",background-video-loop="true",background-opacity="0.7"]
+== Delegate work
+
+* There might be some(one|thing) or layer that can do the work.
+* Move the work to that layer.
+
+[.notes]
+--
+* Of many applications, 90 to 95 % of the operations is CRUD. Most of it (including translating to and from json) can be done by the database.
+* Most of the CRUD business code can be done by the database,
+like updating multiple tables, computing intermediate values etc
+--
+
+[.lightbg,background-video="videos/blue-sky.mp4",background-video-loop="true",background-opacity="0.7"]
+=== [blue]*Cool* Code
+
+* Writing the [green]_whole_ application in Java is [red]*not* the holy grail.
+* Writing [green]*fewer code lines* is.
+
+[.notes]
+--
+* Good software engineering leads to less code, not more.
+* Choosing the right place/layer to solve the problem helps a lot.
+* You need to know your paradigms.
+--
+
+[.lightbg,background-video="videos/blue-sky.mp4",background-video-loop="true",background-opacity="0.7"]
+=== Example JSON
+
+* The database can produce a JSON result, if nicely asked.
+* The database can also accept JSON.
+* This helps avoid useless transformations +
+  between Database, POJO (Java), and JSON.
+* In this analogy, [blue]#JSON# is the [blue]#Carb#, +
+  [red]#POJO# is the [red]#Panko#, +
+  and [green]#Database JSON# is the [green]#Porridge#, +
+  so just forward the Porridge.
+
+[.notes]
+--
+* Pojos are the Panke here. Takes a lot of time and energy, where the database output can sufficient.
+* Many database can produce and process JSON from and to table form.
+* In a rest application, that avoids object to JSON on JSON to object transformations.
+* To the extreme: https://postgrest.org/en/v8.0/[PostgREST ^]
+--
+
+[.lightbg,background-video="videos/blue-sky.mp4",background-video-loop="true",background-opacity="0.7"]
+=== Example JSON cont'd
+
+* Role of middle-ware is then a [green]#short-circuit# +
+  between db and front-end layers.
+* Short circuit means: pass on as is.
+
+[.notes]
+--
+
+* The middle-ware's role is reduced to transforming to and from formats the database can't provide (which are few).
+* be aware of useless transformations, e.g. from db to POJO to JSON if the database can do JSON already.
+* If the front end consumes json, then have the database produce it.
+--
+
+[.lightbg,background-video="videos/blue-sky.mp4",background-video-loop="true",background-opacity="0.7"]
+=== Benefits of reduced work
+
+* If most work is done in the e.g. the database layer, +
+  implementing for another language/platform/... +
+  for middle-ware or front-end +
+  becomes [green]*trivial*.
+
+* Do [green]*more* with and in the database.
+
+[.notes]
+--
+* The smaller a component, the easier replaced.
+* Best is to not need it at all.
+* Most database functionality can be written in a declarative style (sql),
+  with lots of opportunities to optimize.
+* avoid caching problems.
+--
+
+[.lightbg,background-video="videos/blue-sky.mp4",background-video-loop="true",background-opacity="0.7"]
+=== Delegating example
+
+[source,sql]
+[.small-code-font]
+----
+with inp as (
+         select ?::date start_reservation,?::date end_reservation, ?::integer as item_id, ?::integer as customer_id
+     ),
+     validres as (
+         select start_reservation cstart_reservation, greatest(start_reservation+1,end_reservation) cend_reservation
+          from inp
+     ),
+     cost as (
+          select item_cost_per_day*(cend_reservation - cstart_reservation) rcost
+          from validres,rental_items join inp on (inp.item_id=rental_items.item_id)
+     ),
+     makeres as (
+          insert into reservations (during, item_id, for_customer,reservation_cost)
+          select daterange(cstart_reservation,cend_reservation), item_id, customer_id, rcost
+          from inp,validres,cost
+          returning  *
+  )
+  -- final update to customer credit
+  update customers set credit=credit-(select reservation_cost from makeres) where customer_id=(select customer_id  from inp)
+       returning *;
+----
+
+The above is the whole use case in 1 SQL statement.
+
+[.notes]
+--
+* Proof: count the semicolons.
+--

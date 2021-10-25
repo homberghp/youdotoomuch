@@ -1,0 +1,102 @@
+[background-image="images/manuscript.jpg",background-opacity="0.7"]
+== Write less
+
+[quote]
+What is not written can't be wrong.
+
+[.notes]
+--
+One of the most surprising ideas for the student is
+that we teach them write less code.
+--
+
+[.lightbg,background-image="images/sit-on-hands.jpg",background-opacity="0.7"]
+[transition="zoom-in"]
+=== Think before type
+
+* Have I done it before?
+* Its there some(one|thing) that can do it for you?
+* Is there a function in the library that can do it?
+
+[.notes]
+--
+* Remember sit on your hands, anyone?
+* The less you write the less you err.
+* Always be critical.
+* A by-the-book solution might not be the best for your case.
+--
+
+[.lightbg,background-video="videos/blue-sky.mp4",background-video-loop="true",background-opacity="0.7"]
+[transition="zoom-in fade-out"]
+=== Model right
+
+* Use the proper modeling tool/technique.
+* A model leaves out some details to reveal other.
+
+[.notes]
+--
+* modeling should be used to discover things, not for the modeling sake.
+* Choosing the proper diagram or paradigm can de difficult, but is necessary.
+--
+
+[.lightbg,background-video="videos/blue-sky.mp4",background-video-loop="true",background-opacity="0.7"]
+[transition="zoom-in fade-out"]
+=== Do not [red]*over* model
+
+* In many applications [green]*one* data model +
+ (the ER-model) suffices.
+* Duplicating this into an object model (e.g. POJO) serves +
+  [red]#no# purpose. Think [red]*Panko*.
+* Just use a simple **D**ata **T**ransfer **O**bject, like a record in Java 14+.
+* If using JSON, not even a *DTO* is required.
+* Modeling inheritance in domain entities is just as [red]*useless*.
+* Use composition a.k.a. [green]#views# to get the data fit for a use case.
+
+[.notes]
+--
+* Do not make both a ERD/database model and a object model.
+* Use one source of truth. Most of the time start with the data (sausage).
+* Double models only adds complexity and work.
+* Useless transformations in a layered architecture have no (business) value, only cost. Not only programming work but also CPU cycles (energy).
+* Inheritance it will [red]*not survive transit*.
+* The other layer may very well not support classes (JSON, sql) and inheritance. In those layers it is just data. Do not make more of it.
+--
+
+
+[.lightbg,background-video="videos/blue-sky.mp4",background-video-loop="true",background-opacity="0.7"]
+[transition="zoom-in fade-out"]
+=== Model the machine instead
+
+* Put the modeling effort in the machine.
+* In many cases the machine can be designed using +
+  [blue]*well known patterns*.
+* Actually all frameworks are chock-full of patterns.
+* Through patterns, libraries can provide many of the machine parts.
+
+[.notes]
+--
+* Effort can be focus on identifying the opportunities for patterns (GoF, Others) +
+ Or Non Functional requirements like test-ability. (Layered design).
+* Patterns or idioms can/should be taught relatively early, because they are helpful to understand API's.
+* Teach patterns in small steps. Observer, Composite, Strategy/State.
+--
+
+//[.lightbg,background-video="videos/blue-sky.mp4",background-video-loop="true",background-opacity="0.7"]
+[background-image="images/starbase.jpg",background-opacity="0.3"]
+[transition="zoom-in fade-out"]
+=== https://www.entrepreneur.com/article/380078[Advice] from the industry
+
+. make the requirements less dumb
+. try and delete part of the process/product
+. simplify or optimize
+. accelerate cycle time
+. automate
+
+Elon Musk.
+
+[.notes]
+--
+Musk: Do it in this order. It is not smart to throw a part out, after it has been optimized.
+
+Hom's translation: Use every opportunity to remove code. What's not there does not have to be maintained and can't be wrong.
+--

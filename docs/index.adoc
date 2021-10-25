@@ -1,0 +1,36 @@
+[background-image="images/Campus.png"]
+= You do too much
+include::commonhead.adoc[]
+
+*My Last Lecture*
+
+include::intro.adoc[]
+
+include::readmore.adoc[]
+
+include::testmore.adoc[]
+
+include::writeless.adoc[]
+
+include::delegatework.adoc[]
+
+include::dataorcode.adoc[]
+
+//
+// include::teaching.adoc[]
+//
+// include::rulesandexams.adoc[]
+
+include::references.adoc[]
+
+[background-video="videos/thegeneral.mp4",background-video-loop="false",background-video-muted="true",background-opacity="1.0"]
+== [white]*FIN?*
+
+[pass]
+++++
+<script>
+Reveal.initialize({
+	autoPlayMedia: true
+})
+</script>
+++++

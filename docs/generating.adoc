@@ -1,0 +1,66 @@
+[.lightbg,background-video="videos/blue-sky.mp4",background-video-loop="true",background-opacity="0.7"]
+== Generating
+
+* Automation is all about repeating work.
+* (Repetitive) code can be automated: generate code
+
+[.lightbg,background-video="videos/fog-hands.mp4",background-video-loop="true",background-opacity="0.7"]
+=== If you get repetitious
+
+* you can be replaced
+* or your coding can be replaced
+
+[.notes]
+--
+* This applies to many walks of life.
+--
+
+[.lightbg,background-video="videos/blue-sky.mp4",background-video-loop="true",background-opacity="0.7"]
+=== Generating as the better replacement.
+
+* If delegation does not work
+* Generating code from one source of truth.
+* From database schema/table definition to simple flat java objects or records.
+
+[.notes]
+--
+* If delegation of the work does not apply, +
+  how about delegating your coding work to a generator.
+* Generators for **DTO**s  are trivial to write.
+* Show a trivial example in Java(records) and sql.
+--
+
+
+[.lightbg,background-video="videos/blue-sky.mp4",background-video-loop="true",background-opacity="0.7"]
+=== Sql definition
+[source,sql]
+----
+CREATE TABLE employees (
+       employeeid serial primary key,
+       lastname text not null,
+       firstname text not null,
+       email text unique not null,
+       departmentid integer references departments,
+       available boolean default true,
+       dob date not null,
+       hiredate date not null default now()
+);
+----
+
+
+=== Equivalent java record, this is trivial to generate.
+[source,java]
+----
+record Employee( Integer employeeid, String lastName) {
+  // no body
+}
+----
+
+That is all *DTO* code required.
+
+[.notes]
+--
+* Java record are Java 14+
+* Use the information schema to get the table and column data.
+* A simple generator is ~ 160 lines of code.
+--

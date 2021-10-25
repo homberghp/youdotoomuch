@@ -1,0 +1,31 @@
+[background-image="images/dataworld.jpg",background-opacity="0.5"]
+== Data or Code
+
+* as always, the answer depends on the situation.
+* However, many applications are very well modeled in a relational schema.
+** Shops, machine part catalogs, including composite parts.
+** Of the database model, the relational prevailed.
+
+
+[background-image="images/dataworld.jpg",background-opacity="0.5"]
+=== Opinion/ Discussion
+** (Opinion) Popularity of non-SQL database is often caused by having too little understanding of
+RDBMS.
+** THe nosql databases are often ones with only one instance (neo4j, mongodb,) with little commonality, like a query language.
+** They often compromise on important properties such as ACID.
+
+
+[background-image="images/dataworld.jpg",background-opacity="0.5"]
+=== Choosing the right tool.
+
+* Choose the paradigm for the right reasons.
+* Modeling network (think Facebook type relation, friends, but also road routing info ) might be more natural (and performant) in a graph-type database.
+
+
+=== The data model is often a one-of.
+
+* Data models have little reuse. They are application specific.
+* There are no big data patterns, other than the relations, or graphs, 1-1, 1-n, or n-m,
+where the later is often only used in two modes: the 1-n and them-1 mode.
+* Machine parts DO have patterns, best practices, reusable libraries etc.
+//* The data does not mind how it passed through a machine, 

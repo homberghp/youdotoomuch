@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+# Inital Setup see:
+#    https://asciidoctor.org/docs/asciidoctor-revealjs/
+
+
+echo "Watching *.adoc for changes"
+inotifywait -m -e close_write *.adoc |
+while read events; do
+  echo $events
+  make
+done &
+

@@ -1,0 +1,83 @@
+[.lightbg,background-video="videos/river.mp4",background-video-loop="true",background-opacity="0.7"]
+== Teaching & Learning
+
+Teaching is like crossing a river, going from the known to the unknown using wobbly foot rests.
+
+[.notes]
+--
+* Stepping stone metaphore. Once one leg stands firm, you can test the next stone.
+* There remain unknowns on the way
+--
+
+[.lightbg,background-video="videos/river.mp4",background-video-loop="true",background-opacity="0.7"]
+=== Not too much or too little
+
+* You can't learn/teach all At Once.
+* Learning is sometimes taking tiny steps.
+* And accepting unknowns. Sometimes.
+
+[.notes]
+--
+* Start with tiny steps. You must be able to walk before you can run.
+* Allow some things to be unknown
+--
+
+[.lightbg,background-video="videos/river.mp4",background-video-loop="true",background-opacity="0.7"]
+=== Do not lead to danger
+
+* Beware of [red]**over**[green]**simplification**.
+* Avoid examples that must be [red]**un**learned.
+* If some configurations can't be understood yet, [green]_provide them_.
+* [strike red]*Students* [green]*Everyone* should learn to never share passwords.
+
+[.notes]
+--
+* Sql injection vulnerabilities stem from bad SQL examples, combined with string concatenation.
+* Make sure that the security sensitive parts of the configuration are properly set up.
+* Provide the maven configuration, or simplify it (testeasypom)
+* With Docker also use docker-compose, which provides an easy and secure way to supply the username
+and password without having it in the source code.
+--
+
+[.lightbg,background-video="videos/river.mp4",background-video-loop="true",background-opacity="0.7"]
+=== [red]#Bad# example, DB config
+
+* Using dbadmin (postgres, root, dba, sys) as the +
+username in an application.
+* Putting the/a db-username and -password +
+ in the source code of an application.
+
+[.lightbg,background-video="videos/river.mp4",background-video-loop="true",background-opacity="0.7"]
+=== Admin [red]*Bad*, why?
+
+* With a typical database you introduce 3 problems:
+. The source is in a repository, potentially leaking passwords.
+. The admin user has too much power, can do everything.
+. Using the admin user makes database rights ([blue]#GRANT#, [blue]#REVOKE#) +
+  [red]*completely ineffective* +
+ because the admin user is [red]*not* subject to [blue]*access rights*.
+
+[.notes]
+--
+* All major rdbms have a role system with rights that can be granted or revoked.
+* This is a major feature of those databases and often overlooked.
+* Proper use can produce very fine grained data security, where only the owner of a record can see it.
+--
+
+[.lightbg,background-video="videos/river.mp4",background-video-loop="true",background-opacity="0.7"]
+=== [green]#Good# example
+
+* Provide [blue]#docker# *and* [blue]#docker-compose# configurations +
+ that do security settings right.
+* E.g. use a simple [blue]`.env` file that is [red]#not# committed to git. +
+  This can keep sensitive info secret.
+* Provide a script that can create the initial users, +
+  with the appropriate rights.
+
+[.notes]
+--
+* One user/password for the global db admin.
+* One for the schema owner.
+* At least one for the application, with trimmed (revoked) down rights.
+* dockerdinges as example.
+--
