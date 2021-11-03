@@ -41,7 +41,8 @@ image::images/motorcycle.jpg[]
 ...Finding the proper perspective.
 
 * A typical physical artifact can be modeled as a
-* A tree of sub assemblies, where each sub-assembly is a list of sub-assemblies.
+* A tree of sub assemblies, where each sub-assembly +
+  is a list of sub-assemblies.
 * There is a (GoF) pattern here.
 
 [.notes]
