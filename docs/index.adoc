@@ -2,11 +2,13 @@
 = You do too much
 include::commonhead.adoc[]
 
-*My Last Lecture*
+*Colloquium at CGI Eindhoven*
 
 include::intro.adoc[]
 
 include::readmore.adoc[]
+
+include::analysefirst.adoc[]
 
 include::testmore.adoc[]
 
@@ -15,6 +17,8 @@ include::writeless.adoc[]
 include::delegatework.adoc[]
 
 include::dataorcode.adoc[]
+
+
 
 //
 // include::teaching.adoc[]

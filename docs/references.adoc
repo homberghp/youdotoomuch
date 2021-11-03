@@ -4,3 +4,4 @@
 * Slide style: https://bentolor.github.io/java9to13/[java 9 to 13]
 * Advice: https://www.entrepreneur.com/article/380078
 * Slide technology https://docs.asciidoctor.org/reveal.js-converter/latest/[reveal.js with asciidoctor].
+* https://assertj.github.io/doc/[AssertJ]

@@ -6,7 +6,7 @@
 * As in eat more fruits.
 * Reading more prepares you for future problems, gives ideas.
 * You will see the solution and do not have to search for it.
-* a method/class/package a day keeps the architect away.
+* a method/class/package a day keeps the guru away.
 --
 
 [.lightbg,background-video="videos/woman-study.mp4",background-video-loop="true",background-opacity="0.7"]
@@ -20,7 +20,7 @@ Good programmers write code that humans can understand.
 --
 * A program is a story by one human to another with the side-effect that a computer can execute it.
 * Visit code exhibits (good example open source).
-* Mind the naming problem. Good type (class) and method names are a boon to readability.
+* Mind the naming problem. Good type (class) and method names are beneficial to readability.
 --
 
 [.lightbg,background-video="videos/woman-study.mp4",background-video-loop="true",background-opacity="0.7"]
@@ -28,8 +28,8 @@ Good programmers write code that humans can understand.
 
 [.notes]
 --
-* even home brew, if the can withstand some scrutiny.
-* Make reading (good) code part of the homework.
+* even home brew, if they can withstand some scrutiny.
+* Make reading (good) code part of the homework. (For teachers, code reviewers).
 --
 
 [.lightbg,background-video="videos/woman-study.mp4",background-video-loop="true",background-opacity="0.7"]

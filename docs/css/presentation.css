@@ -214,6 +214,7 @@ SECTION .title {
   white-space: pre-wrap; }
 
 .reveal .lightbg { background: #fff8f1d0; }
+.reveal .darkbg { background: #444444d0; color:#fff;}
 .reveal .decentlightbg { background: #fff8f130; }
 
 /* Absatzabstand */

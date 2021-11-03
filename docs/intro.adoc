@@ -3,7 +3,10 @@
 == Agenda
 
 * Expect no surprise here
-* topics: Studying, Testing, Coding, Rules
+* topics:
+** Do Less,
+** Testing,
+** Wrong tutorial examples
 * The general question is: *less or more*?
 
 [.notes]
@@ -21,12 +24,15 @@
   door.open();
 ----
 
+
 [.notes]
 --
+The main purpose is to start a discussion, or at least get you thinking.
+
 Let us start with a quiz.
 --
 
-[.lightbg,background-image="images/panko-or-porridge.png",background-opacity="0.7"]
+[.darkbg,background-image="images/panko-or-porridge.png",background-opacity="0.8"]
 === Quiz
 
 [big blue]*Panko* or [big blue]*Porridge*

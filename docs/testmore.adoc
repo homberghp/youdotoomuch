@@ -13,6 +13,8 @@
   testing actually increases programmers productivity.
 * In coding, _less is more_.
 * Automated tests and regressions.
+* If your company is also hired for maintenance, the investment will pay out double.
+* Testing makes code more easily transferable.
 --
 
 [.decentlightbg,background-video="videos/fog-hands.mp4",background-video-loop="true",background-opacity="0.6"]
@@ -47,6 +49,7 @@ they can help measure the degree of done.
 [.notes]
 --
 * Tests are an excellent way to document the use of an API.
+* A (unit) test can help express the intend of the (original) developer.
 --
 
 [.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
@@ -56,31 +59,34 @@ they can help measure the degree of done.
 [source,java]
 ----
   String greet= greeter.greet( "Klaas" );
-  assertThat(greet) // passes
-      .isNotNull()
-      .isNotEmpty()
+  assertThat(greet) // passes iff
+      .isNotNull() // prevents NPE down the chain
+      .isNotEmpty() // not really needed
       .contains( "Hello", "Klaas" );
 ----
 
 [.notes]
 --
+* Apply the same rules to tests as to normal code, like style, readability.
+* Using a modern test framework (e.g. AssertJ) helps creating *readable* tests.
 * The test is trivial to write and exposes the function of the API.
 * Example uses more asserts than needed, but is about readability.
 --
 
 [.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
 [.degrade,transition="concave-in"]
-=== Example
+=== Example error handling
 
 [source,java]
 ----
   ThrowingCallable code = () -> {
-          greeter.greet(null));  // illegal use
+          greeter.greet( null ) );  // illegal use
   };
 
   // because it throws an NPE
   assertThrownBy( code )
-     .isInstanceOf( NullPointerException.class );
+     .isInstanceOf( NullPointerException.class )
+     .hasMessageContaining("not allowed");
 ----
 
 [.notes]

@@ -1,0 +1,42 @@
+== Object Mapping
+
+* Object relational mapping is a popular technique to
+present database entities as first class object in the business layer.
+
+=== Benefits of ORM
+
+* ORM allows one to express the business logic in the OO language of choice. (Java, .Net).
+* OO (Java, C#) programmers are abundantly available.
+* Work well when everything from the middle layer up (towards UI) also uses Objects in the same technology.
+
+[.notes]
+--
+(Think C# or Java-swing or JavaFX application)
+--
+
+=== Drawbacks of ORM.
+
+* let us use entities as the elements of data.
+* There is a mismatch between Database relational model and object model. (Leaky abstraction)
+* across the divide, the entities have different functionality.
+
+=== Drawbacks in modern (rest/graphql) like application.
+
+* A big part of many applications is plain CRUD.
+* transforming to objects (coming from the DB) and then to the serialization format (say JSON)
+ shows that the objects reason of existence is diminishingly small.
+
+
+=== Never do work that someone else already does.
+
+* Modern databases () can output AND safely.footnote[needs references] parse JSON documents.
+* This means that the database can directly handle the json object from the request body.
+* To the extreme: PostgREST
+"Use a collection of sharp tools rather than building a big ball of mud."
+
+
+
+[.notes]
+--
+Postgrest is implemented in haskell.
+--

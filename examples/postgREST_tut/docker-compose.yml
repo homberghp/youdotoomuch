@@ -1,0 +1,38 @@
+version : "3.9"
+
+services:
+  db:
+        image: "postgres:13-bullseye"
+        volumes:
+            - ./db/initdb.d:/docker-entrypoint-initdb.d
+        environment:
+            - POSTGRES_PASSWORD
+            - DBA_PW
+            - APP_USER
+            - APP_PW
+            - AUTH_PW
+        ports:
+            - "6433:5432"
+        # Uncomment this if you want to persist the data.
+        # volumes:
+        #   - "./pgdata:/var/lib/postgresql/data"
+  server:
+    image: postgrest/postgrest
+    ports:
+      - "3000:3000"
+    environment:
+      - PGRST_DB_URI
+      - PGRST_DB_SCHEMA
+      - PGRST_DB_ANON_ROLE
+      - PGRST_OPENAPI_SERVER_PROXY_URI
+      - PGRST_JWT_SECRET
+    depends_on:
+      - db
+  swagger:
+    image: swaggerapi/swagger-ui
+    ports:
+      - "8080:8080"
+    expose:
+      - "8080"
+    environment:
+      API_URL: http://localhost:3000/
