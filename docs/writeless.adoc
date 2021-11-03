@@ -10,14 +10,15 @@ One of the most surprising ideas for the student is
 that we teach them write less code.
 --
 
-[.lightbg,background-image="images/sit-on-hands.jpg",background-opacity="0.7"]
+[.lightbg,background-video="videos/blue-sky.mp4",background-video-loop="true",background-opacity="0.7"]
 [transition="zoom-in"]
 === Think before type
 
 * Have I done it before?
 * Its there some(one|thing) else that can do it for you?
 * Is there a function in the library that can do it?
-* Is there functionality in a different layer, even if the paradigm is different (SQL vs OO).
+* Is there functionality in a different layer, +
+  even if the paradigm is different (SQL vs OO).
 
 [.notes]
 --

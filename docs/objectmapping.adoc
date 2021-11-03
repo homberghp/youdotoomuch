@@ -3,7 +3,7 @@
 
 image::images/objectmapping.jpg[]
 
-* Object relational mapping is a popular technique to
+* Object relational mapping is a popular technique to +
 present database entities as first class object in the business layer.
 
 [.lightbg,background-image="images/dataworld.jpg",background-opacity="0.5"]

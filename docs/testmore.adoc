@@ -236,7 +236,7 @@ improved (decrease) complexity.
 [.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
 === Lessons from code mutation
 
-* You may find uncovered spots, even if code coverage says 100 %.
+* You may find missed potential bugs, even if code coverage says 100 %.
 * Sometimes you get false positives. +
  Best is to comment them, for the maintainer.
 
@@ -259,4 +259,5 @@ improved (decrease) complexity.
 
 image:images/pit-falsepositive.png[]
 
-* message is: changed boundary survived, because in this case *less than* and *less or equal*  are idempotent.
+* message is: changed boundary survived, +
+ because in this case *less than* and *less or equal*  are idempotent.
