@@ -1,1 +1,5 @@
+# for experiment 3
 export TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidG9kb191c2VyIn0.fGpERoWIqg2rzigy3HRtGePajdHotGI3WCDLkSxoHdo
+
+# for experiment 4
+export NEW_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoidG9kb191c2VyIiwiZXhwIjoxNjM1OTM5ODA4fQ.UYjtvmXvUIipVyHL5041fGsjZ3kbJTXNoPywfywdpFs

@@ -7,7 +7,7 @@ create table api.todos (
   id serial primary key,
   done boolean not null default false,
   task text not null,
-  due timestamptz
+  due timestamptz default now()+'2 minutes'
 );
 
 insert into api.todos (task) values
