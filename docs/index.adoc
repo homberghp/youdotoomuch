@@ -18,6 +18,8 @@ include::delegatework.adoc[]
 
 include::dataorcode.adoc[]
 
+include::objectmapping.adoc[]
+
 include::quizquestions.adoc[]
 
 //

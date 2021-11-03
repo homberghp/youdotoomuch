@@ -1,6 +1,11 @@
-== Quizes
+[background-image="images/pubquiz.webp",background-opacity="1.0"]
+[%notitle]
+== [white]*Quiz*
 
 
+
+
+[.lightbg,background-image="images/pubquiz.webp",background-opacity="0.25"]
 === Immutable
 
 * Why is immutable considered good? Name 3 reasons.
@@ -18,6 +23,12 @@
   is promoted. With the combination of lambdas and streams this became even more popular.
 --
 
+[.lightbg,background-image="images/pubquiz.webp",background-opacity="0.25"]
 === What is more important
 
-* 'Speed' of writing or ease of understanding/reading?
+* Productivity in writing or ease of understanding/reading?
+
+[.notes]
+--
+If you are payed by code-lines, then forget all of this.
+--

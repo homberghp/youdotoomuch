@@ -1,42 +1,64 @@
+[.lightbg,background-image="images/dataworld.jpg",background-opacity="0.5"]
 == Object Mapping
+
+image::images/objectmapping.jpg[]
 
 * Object relational mapping is a popular technique to
 present database entities as first class object in the business layer.
 
+[.lightbg,background-image="images/dataworld.jpg",background-opacity="0.5"]
 === Benefits of ORM
 
-* ORM allows one to express the business logic in the OO language of choice. (Java, .Net).
+* ORM allows one to express the business logic in the OO +
+  language of choice. (Java, .Net).
 * OO (Java, C#) programmers are abundantly available.
-* Work well when everything from the middle layer up (towards UI) also uses Objects in the same technology.
+* Work well when everything from the middle layer up (towards UI) +
+  also uses Objects in the same technology.
 
 [.notes]
 --
-(Think C# or Java-swing or JavaFX application)
+(Think C# or Java-swing or JavaFX application), but also applets, when they were fashionable.
 --
 
+[.lightbg,background-image="images/dataworld.jpg",background-opacity="0.5"]
 === Drawbacks of ORM.
 
 * let us use entities as the elements of data.
-* There is a mismatch between Database relational model and object model. (Leaky abstraction)
+* There is a mismatch between Database relational model +
+  and object model.
 * across the divide, the entities have different functionality.
-
-=== Drawbacks in modern (rest/graphql) like application.
-
-* A big part of many applications is plain CRUD.
-* transforming to objects (coming from the DB) and then to the serialization format (say JSON)
- shows that the objects reason of existence is diminishingly small.
-
-
-=== Never do work that someone else already does.
-
-* Modern databases () can output AND safely.footnote[needs references] parse JSON documents.
-* This means that the database can directly handle the json object from the request body.
-* To the extreme: PostgREST
-"Use a collection of sharp tools rather than building a big ball of mud."
-
-
 
 [.notes]
 --
+Leaky abstraction
+--
+
+[.lightbg,background-image="images/dataworld.jpg",background-opacity="0.5"]
+=== Drawbacks in modern (rest/graphql) like application.
+
+* A big part of many applications is plain CRUD.
+* transforming to objects (coming from the DB) and then to +
+ the serialization format (say JSON) +
+ shows that the objects [red]_raison d'être_ +
+ is diminishingly small.
+
+
+[.lightbg,background-image="images/dataworld.jpg",background-opacity="0.5"]
+=== Do not do others work
+
+* Never do work that someone else already does.
+* Modern relational databases (as in all) can output +
+ AND safely parse JSON documents.
+* This means that the database can directly handle +
+  the json object from the request body.
+* example to the extreme: PostgREST.
+
+"Use a collection of sharp tools rather+
+ than building a big ball of mud."
+
+[.notes]
+--
+needs references
 Postgrest is implemented in haskell.
+* Maybe there is time for a demo.
 --

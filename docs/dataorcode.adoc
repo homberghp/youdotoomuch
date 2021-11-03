@@ -1,4 +1,4 @@
-[background-image="images/dataworld.jpg",background-opacity="0.5"]
+[.lightbg,background-image="images/dataworld.jpg",background-opacity="0.5"]
 == Data or Code
 
 
@@ -10,22 +10,26 @@ Start with data modeling or business objects?
 ** Of the database models, the relational model prevailed.
 
 
-[background-image="images/dataworld.jpg",background-opacity="0.5"]
+[.lightbg,background-image="images/dataworld.jpg",background-opacity="0.5"]
 === Opinion/ Discussion
 ** (Opinion) Popularity of non-SQL database is caused by too little (or out-dated) understanding of the
   RDBMS model.
-** THe NO-SQL databases are often ones with only one instance (neo4j, mongodb,) with little commonality, like a query language.
-** They often compromise on important properties such as ACID.
+** The [blue]#NO-SQL# databases are often ones with only one instance (neo4j, mongodb,) with little commonality, like a query language.
+** They may compromise on important properties such as ACID. Look for [red]*eventually consistent*.
 
+[.notes]
+--
+* an iso graph query standard GQL may be on the way.
+--
 
-[background-image="images/dataworld.jpg",background-opacity="0.5"]
+[.lightbg,background-image="images/dataworld.jpg",background-opacity="0.5"]
 === Choosing the right tool.
 
 * Choose the paradigm for the right reasons.
 * Modeling network (think Facebook type relation, friends, but also road routing info ) might be more natural (and performant) in a graph-type database.
+* There is no reason to put all data in one storage model.
 
-
-[background-image="images/dataworld.jpg",background-opacity="0.5"]
+[.lightbg,background-image="images/dataworld.jpg",background-opacity="0.5",]
 === The data model is often a one-of.
 
 * Data models have little reuse. They are application specific.

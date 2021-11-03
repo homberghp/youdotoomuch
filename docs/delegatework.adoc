@@ -79,7 +79,7 @@ like updating multiple tables, computing intermediate values etc
 --
 
 [.lightbg,background-video="videos/blue-sky.mp4",background-video-loop="true",background-opacity="0.7"]
-=== Delegating example
+=== [.small-font]#Delegating example#
 
 [source,sql]
 [.small-code-font]
@@ -91,14 +91,14 @@ with inp as (
          select start_reservation cstart_reservation, greatest(start_reservation+1,end_reservation) cend_reservation
           from inp
      ),
-     cost as (
+     rescost as (
           select item_cost_per_day*(cend_reservation - cstart_reservation) rcost
           from validres,rental_items join inp on (inp.item_id=rental_items.item_id)
      ),
      makeres as (
           insert into reservations (during, item_id, for_customer,reservation_cost)
           select daterange(cstart_reservation,cend_reservation), item_id, customer_id, rcost
-          from inp,validres,cost
+          from inp,validres,rescost
           returning  *
   )
   -- final update to customer credit
@@ -106,9 +106,14 @@ with inp as (
        returning *;
 ----
 
-The above is the whole use case in 1 SQL statement.
+[.small-font]
+The above is the whole use case in 1 SQL statement, 4 (prepared) parameters +
+meaning [green]*one* round trip to the database and all in a [green]*single* transaction with [green]*minimal* lock times. +
+The traditional (OO) approach would use [red]*4* round trips at least and locks held during at least the last two. +
+The result could be either packed in Json or in a DTO.
 
 [.notes]
 --
 * Proof: count the semicolons.
+* Micro-services: Think network latency.
 --

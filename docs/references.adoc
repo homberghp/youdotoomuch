@@ -5,3 +5,4 @@
 * Advice: https://www.entrepreneur.com/article/380078
 * Slide technology https://docs.asciidoctor.org/reveal.js-converter/latest/[reveal.js with asciidoctor].
 * https://assertj.github.io/doc/[AssertJ]
+* postgREST code samples from https://postgrest.org/en/v8.0/[PostgREST]

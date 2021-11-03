@@ -1,5 +1,18 @@
 [.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
-== Test More
+== Test Quiz
+
+
+[.notes]
+--
+* Who uses and agile process?
+* What is your definition of done?
+* How do you measure burn down?
+* What do you want to achieve with +
+'system or software architecture'?
+--
+
+[.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
+=== Reasons to test
 
 * Testing is not a [red]*cost* but an [green]*investment*.
 * By working TDD style you typically write [green]#less# code.
@@ -29,6 +42,38 @@ Although tests can't prove the absence of errors,
 they can help measure the degree of done.
 --
 
+
+[.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
+=== Test types
+
+* Unit versus integration
+* Static versus dynamic
+
+[.notes]
+--
+* The compiler is your first line of defense: static test.
+* Reviewing (with experienced reviewers) is a static test and can be very valuable.
+** Experienced reviewers (those that have made or seen lots of errors) can spot weakness easily.
+* Running test means dynamic test, either unit or integration
+--
+
+[.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
+=== Economics of testing
+
+* Unit Test should be fast for immediate feedback to the developer.
+* Breaking down a larger project into smaller sub projects +
+  can help improve coverage.
+** Layer model helps.
+* You do not test your library in the application, you assume it tested.
+* For later: generated code needs not tests. The generators do.
+
+[.notes]
+--
+* Ideally be able to run a single method
+* If those sub projects adhere to TDD
+--
+
+
 [.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
 === Tests give confidence
 
@@ -49,7 +94,7 @@ they can help measure the degree of done.
 [.notes]
 --
 * Tests are an excellent way to document the use of an API.
-* A (unit) test can help express the intend of the (original) developer.
+* A (unit) test can help express the intention of the (original) developer.
 --
 
 [.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
@@ -157,19 +202,30 @@ From https://assertj.github.io/doc/#assertj-core[AssertJ-core doc ^]
 * Pitests shows how good your tests are at discovering errors.
 --
 
+[.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6",hidden]
+=== Coverage and complexity
+
+image::images/coverage-report.png[]
+
+[.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
+[%notitle]
+=== No
+
+image::images/addAppointment.png[height=800px]
+
 [.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
 === Lessons from test tooling
 
-* Coverage is not the ultimate goal, less complex is.
-* Looking at coverage reports and wonder why you can't reach a branch.
-* Not covered code also points at too much code, code that has not been asked by TDD.
+* [red]*Coverage* is not the ultimate goal, [green]_less complexity_ is.
+* Looking at coverage reports and wonder [blue]#why you can't reach a branch#.
+* Not covered code points out [red]#too much code#, as in code that is not required via TDD.
 
 [.notes]
 --
 * _Unreachable code_ (by precondition in earlier parts) is a side effect of high complexity.
 Studying the coverage report (which branch is never reached) may help find a test, or, more often,
 a too complex solution or branching logic in the wrong order or over constrained.
-* Even if you do not care so much for high coverage, look at the complexity of methods, and see if you can
+* Even if you do not care so much about high coverage, *do* look at the complexity of methods, and see if you can
 improved (decrease) complexity.
 
 --
@@ -179,10 +235,12 @@ improved (decrease) complexity.
 
 * Sometimes you get false positives. Best is to comment them, for the maintainer.
 
+[.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
 === General observations
 
 * Code of 'experienced' juniors is often complex.
 * This complexity is often a sign of NOT working TDD.
+* The least complex code always wins, is more understandable and maintainable.
 
 [.notes]
 --
