@@ -64,6 +64,7 @@ they can help measure the degree of done.
       .isNotEmpty() // not really needed
       .contains( "Hello", "Klaas" );
 ----
+https://assertj.github.io/doc/[AssertJ ^]
 
 [.notes]
 --
@@ -88,8 +89,102 @@ they can help measure the degree of done.
      .isInstanceOf( NullPointerException.class )
      .hasMessageContaining("not allowed");
 ----
+https://assertj.github.io/doc/[AssertJ ^]
 
 [.notes]
 --
 * This test documents the precondition.
+--
+
+[.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
+=== Other AssertJ examples
+
+[source,java]
+----
+    assertThat(fellowshipOfTheRing)
+       .filteredOn(character -> character.getName().contains("o"))
+       .containsOnly(aragorn, frodo, legolas, boromir)
+       .extracting(character -> character.getRace().getName())
+       .contains("Hobbit", "Elf", "Man");
+
+----
+
+From https://assertj.github.io/doc/#assertj-core[AssertJ-core doc ^]
+
+[.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
+=== Use Parameterized tests
+
+* Read test data from csv files or parameter lists
+* Makes writing less test
+
+[.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
+=== Example parameterized test
+
+[source,java]
+----
+    @ParameterizedTest
+    @CsvSource( {
+      // msg, expected, n, d
+        "whole number, 2, 2, 1 ",
+        "two thirds, (2/3), 2, 3",
+        "one third, (1/3), -3, -9 ",
+        "minus two fifths, -(2/5), 12, -30",
+        "one + two fifths, -(1+(2/5)), 35, -25 "
+    } )
+    void t2fractionToString( String message, String expected,
+                             int num, int denom ) {
+
+        Fraction actual = new Fraction( num, denom );
+        assertThat( actual.toString() )
+                .as( message )
+                .isEqualTo( expected );
+
+    }
+----
+
+
+[.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
+=== Use test tooling
+
+* Code coverage includes a view on complexity.
+* Business code mutation or automatic breaking the code to check the tests
+
+[.notes]
+--
+* explain McCabe's cyclomatic complexity?
+** Number of independent linear paths through the code.
+* show examples from Alda?
+* Pitests shows how good your tests are at discovering errors.
+--
+
+[.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
+=== Lessons from test tooling
+
+* Coverage is not the ultimate goal, less complex is.
+* Looking at coverage reports and wonder why you can't reach a branch.
+* Not covered code also points at too much code, code that has not been asked by TDD.
+
+[.notes]
+--
+* _Unreachable code_ (by precondition in earlier parts) is a side effect of high complexity.
+Studying the coverage report (which branch is never reached) may help find a test, or, more often,
+a too complex solution or branching logic in the wrong order or over constrained.
+* Even if you do not care so much for high coverage, look at the complexity of methods, and see if you can
+improved (decrease) complexity.
+
+--
+
+[.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
+=== Lessons from code mutation
+
+* Sometimes you get false positives. Best is to comment them, for the maintainer.
+
+=== General observations
+
+* Code of 'experienced' juniors is often complex.
+* This complexity is often a sign of NOT working TDD.
+
+[.notes]
+--
+* Student specific?
 --

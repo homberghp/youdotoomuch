@@ -1,0 +1,23 @@
+== Quizes
+
+
+=== Immutable
+
+* Why is immutable considered good? Name 3 reasons.
+
+
+[.notes]
+--
+. No need to reason about possible states. There is only one, that after construction. +
+  By the way a Java String is immutable, so a json document as String is too.
+. Can be freely copied (think caches) without affecting or introducing caching problems. +
+ (An immutable object is never written to, after instantiation) so no cache line invalidation.
+. Speed.
+. The first two make the functional/immutable style of functional languages so appealing.
+. OO at the beginning was very state-full. Java think java beans. Now more and more functional style
+  is promoted. With the combination of lambdas and streams this became even more popular.
+--
+
+=== What is more important
+
+* 'Speed' of writing or ease of understanding/reading?

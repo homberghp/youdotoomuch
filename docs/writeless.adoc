@@ -15,8 +15,9 @@ that we teach them write less code.
 === Think before type
 
 * Have I done it before?
-* Its there some(one|thing) that can do it for you?
+* Its there some(one|thing) else that can do it for you?
 * Is there a function in the library that can do it?
+* Is there functionality in a different layer, even if the paradigm is different (SQL vs OO).
 
 [.notes]
 --
@@ -35,7 +36,7 @@ that we teach them write less code.
 
 [.notes]
 --
-* modeling should be used to discover things, not for the modeling sake.
+* Modeling should be used to discover things, not for the modeling sake.
 * Choosing the proper diagram or paradigm can de difficult, but is necessary.
 --
 
@@ -75,6 +76,7 @@ that we teach them write less code.
 
 [.notes]
 --
+* Use the sausage vs machine metaphor.
 * Effort can be focus on identifying the opportunities for patterns (GoF, Others) +
  Or Non Functional requirements like test-ability. (Layered design).
 * Patterns or idioms can/should be taught relatively early, because they are helpful to understand API's.
@@ -96,7 +98,6 @@ Elon Musk.
 
 [.notes]
 --
-Musk: Do it in this order. It is not smart to throw a part out, after it has been optimized.
-
-Hom's translation: Use every opportunity to remove code. What's not there does not have to be maintained and can't be wrong.
+* Musk: Do it in this order. It is not smart to throw a part out, after it has been optimized.
+* Hom's translation: Use every opportunity to remove code. What's not there does not have to be maintained and can't be wrong.
 --

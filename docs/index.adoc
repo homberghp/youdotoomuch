@@ -18,7 +18,7 @@ include::delegatework.adoc[]
 
 include::dataorcode.adoc[]
 
-
+include::quizquestions.adoc[]
 
 //
 // include::teaching.adoc[]
