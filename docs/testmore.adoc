@@ -189,10 +189,11 @@ From https://assertj.github.io/doc/#assertj-core[AssertJ-core doc ^]
 
 
 [.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
-=== Use test tooling
+=== Use test measurement tooling
 
 * Code coverage includes a view on complexity.
-* Business code mutation or automatic breaking the code to check the tests
+* Business code mutation or automatic breaking the code +
+  to check the tests.
 
 [.notes]
 --
@@ -217,8 +218,10 @@ image::images/addAppointment.png[height=800px]
 === Lessons from test tooling
 
 * [red]*Coverage* is not the ultimate goal, [green]_less complexity_ is.
-* Looking at coverage reports and wonder [blue]#why you can't reach a branch#.
-* Not covered code points out [red]#too much code#, as in code that is not required via TDD.
+* Looking at coverage reports +
+ and wonder [blue]#why you can't reach a branch#.
+* Not covered code points out [red]#too much code#, +
+as in code that is not required via TDD.
 
 [.notes]
 --
@@ -233,16 +236,27 @@ improved (decrease) complexity.
 [.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
 === Lessons from code mutation
 
-* Sometimes you get false positives. Best is to comment them, for the maintainer.
+* You may find uncovered spots, even if code coverage says 100 %.
+* Sometimes you get false positives. +
+ Best is to comment them, for the maintainer.
 
 [.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
 === General observations
 
 * Code of 'experienced' juniors is often complex.
 * This complexity is often a sign of NOT working TDD.
-* The least complex code always wins, is more understandable and maintainable.
+* The least complex code always wins, +
+  is more understandable and maintainable.
+* Demo false positives with fraction
 
 [.notes]
 --
 * Student specific?
 --
+
+[.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
+=== Pitest false positive
+
+image:images/pit-falsepositive.png[]
+
+* message is: changed boundary survived, because in this case *less than* and *less or equal*  are idempotent.

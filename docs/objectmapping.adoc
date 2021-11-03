@@ -53,8 +53,7 @@ Leaky abstraction
   the json object from the request body.
 * example to the extreme: PostgREST.
 
-"Use a collection of sharp tools rather+
- than building a big ball of mud."
+"Use a collection of sharp tools rather than building a big ball of mud."
 
 [.notes]
 --
