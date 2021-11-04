@@ -565,7 +565,9 @@ also uses Objects in the same technology.</p></li></ul></div>
 and object model.</p></li><li><p>across the divide, the entities have different functionality.</p></li></ul></div>
 <aside class="notes"><div class="paragraph"><p>Leaky abstraction</p></div></aside></div></section><section id="_raison_dêtre_of_pojos" class="lightbg" data-background-image="images/dataworld.jpg" data-background-opacity="0.5"><h2><span class="small-font">raison d&#8217;être of PoJos.</span></h2><div class="slide-content"><div class="paragraph"><p>Think Rest or GraphQL.</p></div>
 <div class="ulist"><ul><li><p>A big part of many applications is plain CRUD.</p></li><li><p>transforming to objects (from DB) and then to (say JSON)<br>
-shows that the objects serve no purpose, and actually only consume useless CPU cycles.</p></li></ul></div></div></section><section id="_do_not_do_others_work" class="lightbg" data-background-image="images/dataworld.jpg" data-background-opacity="0.5"><h2>Do not do others work</h2><div class="slide-content"><div class="ulist"><ul><li><p>Never do work that someone else already does.</p></li><li><p>Modern relational databases (as in all) can output<br>
+shows that the objects serve no purpose,<br>
+and actually only consume useless CPU cycles.</p></li></ul></div>
+<aside class="notes"><div class="ulist"><ul><li><p>useless cycles: costs, energy.</p></li></ul></div></aside></div></section><section id="_do_not_do_others_work" class="lightbg" data-background-image="images/dataworld.jpg" data-background-opacity="0.5"><h2>Do not do others work</h2><div class="slide-content"><div class="ulist"><ul><li><p>Never do work that someone else already does.</p></li><li><p>Modern relational databases (as in all) can output<br>
 AND safely parse JSON documents.</p></li><li><p>This means that the database can directly handle<br>
 the json object from the request body.</p></li><li><p>example to the extreme: PostgREST.</p></li></ul></div>
 <div class="paragraph"><p>"Use a collection of sharp tools rather than building a big ball of mud."</p></div>

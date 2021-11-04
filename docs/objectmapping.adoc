@@ -40,8 +40,13 @@ Think Rest or GraphQL.
 
 * A big part of many applications is plain CRUD.
 * transforming to objects (from DB) and then to (say JSON) +
- shows that the objects serve no purpose, and actually only consume useless CPU cycles.
+ shows that the objects serve no purpose, +
+ and actually only consume useless CPU cycles.
 
+[.notes]
+--
+* useless cycles: costs, energy.
+--
 
 [.lightbg,background-image="images/dataworld.jpg",background-opacity="0.5"]
 === Do not do others work
