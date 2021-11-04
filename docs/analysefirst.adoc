@@ -6,13 +6,14 @@
 
 * Too often, [blue]#experienced# developers 'see' the solution +
  [red]#before# they hear the end of the requirements.
-** They think in solutions, and often fail to understand +
+* They think in solutions, and often fail to understand +
   the real problem and miss the better solution.
 
 
 [.notes]
 --
-Even if the solution is not the answer to the problem, or even the best.
+* Even if the solution is not the answer to the problem, or even the best.
+* This is an observation from education with students that programmed earlier.
 --
 
 
@@ -29,11 +30,21 @@ Even if the solution is not the answer to the problem, or even the best.
 
 image::images/Exploded-view-of-the-differential-assembly.png[]
 
+[.notes]
+--
+Both a tree (rooted at case) and list (of parts) is okay
+--
+
 [.lightbg,background-image="images/sit-on-hands.jpg", background-opacity="0.6"]
+[%notitle]
 === [.small-font]#Model this too#
 
 image::images/motorcycle.jpg[]
 
+[.notes]
+--
+A tree of nodes, but non-binary.
+--
 
 [.lightbg,background-image="images/sit-on-hands.jpg", background-opacity="0.6"]
 === Modeling/analysing is...

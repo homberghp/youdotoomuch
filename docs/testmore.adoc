@@ -65,12 +65,14 @@ they can help measure the degree of done.
   can help improve coverage.
 ** Layer model helps.
 * You do not test your library in the application, you assume it tested.
-* For later: generated code needs not tests. The generators do.
+* For later: generated code needs no tests.
+** However: The generators do.
 
 [.notes]
 --
-* Ideally be able to run a single method
-* If those sub projects adhere to TDD
+* Ideally be able to run a single method.
+* If those sub projects adhere to TDD.
+* But think: a generator can generate 1000 classes, or DTO and mappers.
 --
 
 
@@ -88,8 +90,9 @@ they can help measure the degree of done.
 [.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
 === Testing Documents
 
-* A well written test is the easiest way to document how an API +
+* A well written test is the easiest way to document [blue]*how* an API +
  is to be used, including [red]*pre*- and post-conditions.
+* Write your code examples as tests will nudge towards more testing.
 
 [.notes]
 --
@@ -132,7 +135,7 @@ https://assertj.github.io/doc/[AssertJ ^]
   // because it throws an NPE
   assertThrownBy( code )
      .isInstanceOf( NullPointerException.class )
-     .hasMessageContaining("not allowed");
+     .hasMessageContaining( "not allowed" );
 ----
 https://assertj.github.io/doc/[AssertJ ^]
 
@@ -163,7 +166,7 @@ From https://assertj.github.io/doc/#assertj-core[AssertJ-core doc ^]
 * Makes writing less test
 
 [.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
-=== Example parameterized test
+=== [.small-font]#parameterized test#
 
 [source,java]
 ----
@@ -204,9 +207,9 @@ From https://assertj.github.io/doc/#assertj-core[AssertJ-core doc ^]
 --
 
 [.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6",hidden]
-=== Coverage and complexity
+=== Coverage and [green]*complexity*
 
-image::images/coverage-report.png[]
+image::images/coverage-reporta.png[]
 
 [.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
 [%notitle]
@@ -215,13 +218,14 @@ image::images/coverage-report.png[]
 image::images/addAppointment.png[height=800px]
 
 [.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]
-=== Lessons from test tooling
+=== [.small-font]#Lessons from test tooling#
 
-* [red]*Coverage* is not the ultimate goal, [green]_less complexity_ is.
+* [red]#Coverage# is not the ultimate goal, [green]*less complexity* is.
 * Looking at coverage reports +
  and wonder [blue]#why you can't reach a branch#.
 * Not covered code points out [red]#too much code#, +
-as in code that is not required via TDD.
+  as in code that is not required via TDD, or to few tests. +
+ (Add a data record?)
 
 [.notes]
 --
@@ -230,7 +234,7 @@ Studying the coverage report (which branch is never reached) may help find a tes
 a too complex solution or branching logic in the wrong order or over constrained.
 * Even if you do not care so much about high coverage, *do* look at the complexity of methods, and see if you can
 improved (decrease) complexity.
-
+* Starting with one test data record and then add a test record to cover more is an efficient approach.
 --
 
 [.decentlightbg,background-video="videos/flowers.mp4",background-video-loop="true",background-opacity="0.6"]

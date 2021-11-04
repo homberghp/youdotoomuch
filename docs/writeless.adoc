@@ -67,7 +67,9 @@ that we teach them write less code.
 
 [.lightbg,background-video="videos/blue-sky.mp4",background-video-loop="true",background-opacity="0.7"]
 [transition="zoom-in fade-out"]
-=== Model the machine instead
+=== [.small-font]#Model the machine instead#
+
+image::images/meatgrinder.jpg[role="thumb-right", height="120px"]
 
 * Put the modeling effort in the machine.
 * In many cases the machine can be designed using +
@@ -84,7 +86,7 @@ that we teach them write less code.
 * Teach patterns in small steps. Observer, Composite, Strategy/State.
 --
 
-//[.lightbg,background-video="videos/blue-sky.mp4",background-video-loop="true",background-opacity="0.7"]
+
 [background-image="images/starbase.jpg",background-opacity="0.3"]
 [transition="zoom-in fade-out"]
 === https://www.entrepreneur.com/article/380078[Advice] from the industry

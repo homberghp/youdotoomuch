@@ -2,12 +2,12 @@
 [.lightbg,background-video="videos/relaxing.mp4",background-video-loop="true",background-video-muted="true",background-opacity="0.8"]
 == Agenda
 
-* Expect no surprise here
-* topics:
-** Do Less,
-** Testing,
-** Wrong tutorial examples
-* The general question is: *less or more*?
+* Read more
+* Analyze more
+* Test
+* Write less
+* Delegate work
+* Data modeling
 
 [.notes]
 --
@@ -32,7 +32,7 @@ The main purpose is to start a discussion, or at least get you thinking.
 Let us start with a quiz.
 --
 
-[.darkbg,background-image="images/panko-or-porridge.png",background-opacity="0.8"]
+[.lightbg,background-image="images/panko-or-porridge.png",background-opacity="0.8"]
 === Quiz
 
 [big blue]*Panko* or [big blue]*Porridge*
