@@ -2,4 +2,5 @@
 
 sources of my last lecture
 
-rendered at https://homberghp.github.io/enfin/
+rendered at https://homberghp.github.io/youdotoomuch
+
